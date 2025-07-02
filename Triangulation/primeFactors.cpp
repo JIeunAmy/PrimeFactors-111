@@ -7,14 +7,16 @@ public:
 	vector<int> of(int number)
 	{
 		vector<int> result = {};
-		while (number > 1) {
-			if (number % 2 == 0) {
-				result.push_back(2);
-				number /= 2;
+		int divisor = 2;
+
+		while ((number > 1) && (divisor <= number)){
+			if (number % divisor == 0) {
+				result.push_back(divisor);
+				number /= divisor;
+				continue;
 			}
-			if (number % 3 == 0) {
-				result.push_back(3);
-				number /= 3;
+			else {
+				divisor += 1;
 			}
 		}
 		
